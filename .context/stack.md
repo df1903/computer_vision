@@ -23,4 +23,4 @@ Pedir confirmación al usuario antes de agregarlas a `requirements.txt` (ver `st
 
 ## Documentación y comandos del repo
 
-- Commits: Conventional Commits (`tipo(ámbito): descripción corta en español`). Ver `.context/instructions.md`.
+- Commits: Conventional Commits (`tipo(ámbito): descripción corta en español`). Ver `AGENTS.md`.

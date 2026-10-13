@@ -33,4 +33,4 @@ Cada trabajo tiene su propio `README.md` con detalle de cómo funciona y cómo c
 
 ## Para Claude Code
 
-Ver `CLAUDE.md` — apunta al contexto del curso (`.context/curso/temario.md`) y a las convenciones del repo.
+Ver `AGENTS.md` (fuente portable) y `CLAUDE.md` (import + notas de Claude Code). Contexto en `.context/`: temario del curso en `.context/curso/temario.md`, convenciones en `.context/conventions.md`.
