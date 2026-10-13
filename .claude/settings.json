@@ -8,9 +8,29 @@
       "Bash(venv/Scripts/pip.exe list:*)"
     ],
     "deny": [
+      "Read(.env)",
+      "Read(.env.local)",
+      "Read(.env.production)",
+      "Read(**/*.pem)",
+      "Read(**/id_rsa)",
+      "Read(**/id_ed25519)",
+      "Edit(.env)",
       "Bash(git push:*)",
       "Bash(git reset --hard:*)",
       "Bash(rm -rf:*)"
+    ]
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash|Read|Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PROJECT_DIR}/.claude/hooks/protect-secrets.sh"
+          }
+        ]
+      }
     ]
   }
 }
