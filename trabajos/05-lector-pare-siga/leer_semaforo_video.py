@@ -18,7 +18,7 @@ def main():
         print("Uso: python leer_semaforo_video.py ruta/al/video.mp4")
         return
 
-    # Seccion 2.3 del temario / coding-standards.md: resolver rutas con
+    # Seccion 2.3 del temario / conventions.md: resolver rutas con
     # os.path para que el script funcione igual sin importar desde donde
     # se invoque; aqui el argumento ya viene dado por el usuario, solo
     # normalizamos separadores de ruta.
