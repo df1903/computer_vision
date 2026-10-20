@@ -4,3 +4,5 @@ matplotlib
 jupyter
 ipykernel
 mediapipe
+tensorflow
+scikit-learn

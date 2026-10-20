@@ -1,7 +1,32 @@
 venv/
+.venv/
 __pycache__/
 *.pyc
 .ipynb_checkpoints/
+
+# Modelos entrenados y pesos (trabajos de CNN)
+*.keras
+*.h5
+*.hdf5
+*.tflite
+*.pb
+*.onnx
+
+# Resultados generados por los entrenamientos
+trabajos/06-cnns/resultados/
+
+# Checkpoints y logs de TensorFlow / TensorBoard
+checkpoints/
+logs/
+
+# Editores y sistema operativo
+.vscode/
+.idea/
+*.swp
+*~
+Thumbs.db
+Desktop.ini
+.DS_Store
 
 # Local overrides del harness
 .claude/settings.local.json
