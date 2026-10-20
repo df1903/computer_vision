@@ -42,7 +42,7 @@ Estado: primer corte cerrado (Fundamentos → K-Means); segundo corte abierto (C
 - Un solo `venv/` y un solo `requirements.txt`, en la raíz. Nunca crear venv ni requirements dentro de `trabajos/`.
 - Nunca leas ni escribas `.env*`, claves ni credenciales (también lo bloquea un hook).
 - Nunca hagas `push --force` ni borres historial de git.
-- No agregues `scikit-learn` ni TensorFlow/Keras sin confirmación (ver `known-issues.md`).
+- Dependencias nuevas solo con confirmación del usuario (aprobadas en `.context/stack.md`).
 
 ## Cierre de sesión
 Al terminar un bloque de trabajo relevante, ejecuta la skill `close-session`

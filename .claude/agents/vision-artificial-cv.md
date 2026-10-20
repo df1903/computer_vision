@@ -29,7 +29,7 @@ geométricas (`findContours`, `approxPolyDP`, `boundingRect`, clasificación por
 
 Fuera: cualquier técnica no cubierta arriba (transformada de Hough, CLAHE, umbral adaptativo,
 warpPerspective, momentos/matchShapes, video/flujo óptico, calibración de cámara, deep learning/CNN
-(`.context/curso/11-cnn.md` solo es contexto; TensorFlow no está aprobado) con `cv2.dnn`, detectores tipo YOLO). Si la tarea la requiere, dilo explícitamente en vez de
+(`.context/curso/11-cnn.md` solo es contexto; el trabajo de CNN está en `trabajos/06-cnns/`) con `cv2.dnn`, detectores tipo YOLO). Si la tarea la requiere, dilo explícitamente en vez de
 improvisar o inventar comportamiento de OpenCV que no conoces con certeza.
 
 ## Convenciones (no negociables)

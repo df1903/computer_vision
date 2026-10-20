@@ -18,6 +18,7 @@ venv\Scripts\pip install -r requirements.txt
 - `trabajos/03-analisis-facial/` — análisis facial en tiempo real con MediaPipe (medidas y forma de rostro).
 - `trabajos/04-filtros-morfologicos/` — bordes (Canny) + operaciones morfológicas ajustables en vivo.
 - `trabajos/05-lector-pare-siga/` — lector de semáforo PARE/SIGA por color (HSV) + morfología + contornos.
+- `trabajos/06-cnns/` — entrenamiento y comparación de CNNs (VGG, ResNet, MobileNet, DenseNet) con transfer learning en Keras.
 - `material-clase/` — notebooks y diapositivas del profesor (ver su `README.md`).
 
 ## Estado del curso
@@ -27,7 +28,7 @@ venv\Scripts\pip install -r requirements.txt
 | 1 | Fundamentos → K-Means | Cerrado |
 | 2 | CNN en adelante | Abierto |
 
-Notas: K-Means y CNN viven como material de clase y contexto (`.context/curso/`), sin trabajo propio en `trabajos/` por ahora.
+Notas: K-Means vive como material de clase y contexto (`.context/curso/`), sin trabajo propio en `trabajos/`. El trabajo de CNN es `trabajos/06-cnns/`.
 
 Cada trabajo tiene su propio `README.md` con detalle de cómo funciona y cómo correrlo.
 

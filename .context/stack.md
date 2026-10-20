@@ -11,15 +11,10 @@
 - `matplotlib` — visualización cuando OpenCV no basta.
 - `jupyter`, `ipykernel` — notebooks de `material-clase/`.
 - `mediapipe` — detección de landmarks (usado en `trabajos/03-analisis-facial/`).
+- `tensorflow` (incluye `keras`) — CNN y transfer learning (usado en `trabajos/06-cnns/`, ver `.context/curso/11-cnn.md`).
+- `scikit-learn` — métricas (`classification_report`, matriz de confusión) en `trabajos/06-cnns/`; también `KMeans` en `material-clase/4_Kmeans_Imagenes.ipynb` (alternativa sin dependencia: `cv2.kmeans`).
 
 Si algo no está aquí, no está aprobado: pídele al usuario confirmación antes de agregar una dependencia nueva.
-
-## Dependencias usadas por material de clase pero NO aprobadas
-
-- `scikit-learn` — `material-clase/4_Kmeans_Imagenes.ipynb` (`KMeans`). Alternativa sin dependencia: `cv2.kmeans`.
-- `tensorflow` / `keras` — código de CNN en `.context/curso/11-cnn.md`.
-
-Pedir confirmación al usuario antes de agregarlas a `requirements.txt` (ver `state/known-issues.md`).
 
 ## Documentación y comandos del repo
 

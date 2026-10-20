@@ -124,7 +124,7 @@ model.save('models/modeloA.keras')
 
 Flujo de tamaños: 28×28×1 → conv1 (16 filtros) 28×28×16 → pool 14×14×16 → conv2 (36) 14×14×36 → pool 7×7×36 → flatten 1764 → densa 128 → salida 10.
 `[NOTA]` Las diapositivas muestran el bloque de código de forma fragmentada (el `MaxPooling2D` y el `Flatten` aparecen en slides distintas); el modelo completo es el de arriba. `cargarDatos` en la diapositiva desempaca 3 valores al llamarla pero devuelve 2 (inconsistencia de la fuente).
-`[AMPLIACIÓN]` Requiere TensorFlow/Keras, que **no** está en `requirements.txt` (ver `state/known-issues.md`).
+`[AMPLIACIÓN]` Requiere TensorFlow/Keras, ya en `requirements.txt`. Trabajo que lo usa: `trabajos/06-cnns/` (transfer learning con VGG, ResNet, etc.).
 
 ## 7. Arquitecturas reconocidas `[CURSO]` (`2_CNNs_Reconocidas.md`)
 

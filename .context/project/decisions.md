@@ -40,3 +40,15 @@ Decisión:
 - Perfil: `lite` + `known-issues.md`. Fuera: `architecture.md`, `rules.md`, `requirements/roadmap/risks`, `sdd-NNN-*`, subagente `code-reviewer`, `new-feature-spec` (no aplican a un repo de curso).
 
 Alternativas descartadas: perfil `full` completo (plantillas vacías sin uso); copiar la plantilla tal cual (perdería `curso/` y las reglas del venv único).
+
+## 2026-10-20 — Se aprueban TensorFlow y scikit-learn; trabajo 06 usa el entorno raíz
+
+Contexto: llegó el trabajo de CNNs (`trabajos/06-cnns/`) con su propio `.gitignore` y `requirements.txt` (`tensorflow`, `scikit-learn`, `numpy`, `matplotlib`). Chocaba con la restricción de un solo `requirements.txt` y con la regla de no agregar esas dependencias sin confirmación.
+
+Decisión:
+- El usuario pidió integrarlo al entorno general: `tensorflow` y `scikit-learn` pasan a `requirements.txt` raíz y quedan aprobadas en `stack.md`. `numpy` y `matplotlib` ya estaban.
+- Se eliminan `trabajos/06-cnns/.gitignore` y `trabajos/06-cnns/requirements.txt`; sus reglas útiles (pesos de modelos, checkpoints/logs, IDE/SO) se fusionan en el `.gitignore` raíz.
+- `trabajos/06-cnns/resultados/` se ignora (salidas regenerables de los entrenamientos), con ruta explícita para no afectar a otros trabajos.
+- `main.py` resuelve `dataset/` y `resultados/` con `os.path.dirname(__file__)` (convención del repo), así corre desde la raíz.
+
+Alternativas descartadas: mantener el `requirements.txt` local del trabajo (viola `constraints.md`); ignorar `resultados` con el patrón genérico `resultados/` (afectaría trabajos futuros).

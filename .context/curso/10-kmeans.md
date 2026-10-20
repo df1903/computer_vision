@@ -80,7 +80,7 @@ colores = np.uint8(modelo.cluster_centers_)
 segmentada = colores[etiquetas].reshape(imagen.shape)  # sigue en BGR si se leyó con imread
 ```
 
-`[NOTA]` El notebook original corre en **Google Colab** (`from google.colab import files`, `files.upload()`) y usa **scikit-learn**. En local hay que cambiar la carga por `cv2.imread(ruta)` y tener `scikit-learn` instalado (hoy **no** está en `requirements.txt`; ver `state/known-issues.md`).
+`[NOTA]` El notebook original corre en **Google Colab** (`from google.colab import files`, `files.upload()`) y usa **scikit-learn**. En local hay que cambiar la carga por `cv2.imread(ruta)` y tener `scikit-learn` instalado (ya está en `requirements.txt`; ver `state/known-issues.md`).
 
 ## 5. Alternativa solo con OpenCV `[AMPLIACIÓN]`
 
