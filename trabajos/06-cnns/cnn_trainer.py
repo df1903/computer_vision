@@ -13,6 +13,7 @@ from sklearn.metrics import (
     confusion_matrix,
     f1_score,
 )
+from sklearn.model_selection import train_test_split
 import tensorflow as tf
 
 # nombre -> (constructor, función de preprocesamiento)
@@ -50,26 +51,72 @@ class CNNTrainer:
         self._cargar_datos()
 
     def _cargar_datos(self):
-        total_hold = self.val_split + self.test_split
-        kw = dict(directory=self.dataset_dir, labels="inferred",
-                  label_mode="int", image_size=self.img_size,
-                  batch_size=self.batch_size, seed=self.seed,
-                  validation_split=total_hold)
-        self.train_raw = tf.keras.utils.image_dataset_from_directory(
-            subset="training", shuffle=True, **kw)
-        # shuffle=True con la misma semilla garantiza distribución balanceada de clases
-        hold = tf.keras.utils.image_dataset_from_directory(
-            subset="validation", shuffle=True, **kw)
-        hold = hold.cache()
+        if self.val_split <= 0 or self.test_split <= 0:
+            raise ValueError("val_split y test_split deben ser mayores que 0.")
+        if self.val_split + self.test_split >= 1.0:
+            raise ValueError("La suma de val_split + test_split debe ser menor que 1.0.")
 
-        self.class_names = self.train_raw.class_names
+        class_names = sorted(
+            [d for d in os.listdir(self.dataset_dir)
+             if os.path.isdir(os.path.join(self.dataset_dir, d))]
+        )
+        if not class_names:
+            raise ValueError(f"No se encontraron carpetas de clase en '{self.dataset_dir}'.")
+
+        extensiones = {".jpg", ".jpeg", ".png", ".bmp", ".gif", ".webp"}
+        file_paths = []
+        labels = []
+
+        for idx, class_name in enumerate(class_names):
+            class_dir = os.path.join(self.dataset_dir, class_name)
+            for root, _, files in os.walk(class_dir):
+                for file_name in files:
+                    ext = os.path.splitext(file_name)[1].lower()
+                    if ext in extensiones:
+                        file_paths.append(os.path.join(root, file_name))
+                        labels.append(idx)
+
+        if not file_paths:
+            raise ValueError(f"No se encontraron imágenes válidas en '{self.dataset_dir}'.")
+
+        self.class_names = class_names
         self.num_classes = len(self.class_names)
 
-        # Se divide el hold-out en validación y test
-        n = hold.cardinality().numpy()
-        n_val = max(1, int(round(n * self.val_split / total_hold)))
-        self.val_raw = hold.take(n_val)
-        self.test_raw = hold.skip(n_val) if n_val < n else hold.take(n_val)
+        train_val_paths, test_paths, train_val_labels, test_labels = train_test_split(
+            file_paths,
+            labels,
+            test_size=self.test_split,
+            stratify=labels,
+            random_state=self.seed,
+        )
+
+        val_rel = self.val_split / (1.0 - self.test_split)
+        train_paths, val_paths, train_labels, val_labels = train_test_split(
+            train_val_paths,
+            train_val_labels,
+            test_size=val_rel,
+            stratify=train_val_labels,
+            random_state=self.seed,
+        )
+
+        self.train_raw = self._crear_dataset(train_paths, train_labels, entrenar=True)
+        self.val_raw = self._crear_dataset(val_paths, val_labels)
+        self.test_raw = self._crear_dataset(test_paths, test_labels)
+
+    def _crear_dataset(self, paths, labels, entrenar=False):
+        path_ds = tf.data.Dataset.from_tensor_slices((list(paths), list(labels)))
+        if entrenar:
+            path_ds = path_ds.shuffle(len(paths), seed=self.seed, reshuffle_each_iteration=True)
+
+        def _cargar(path, label):
+            img = tf.io.read_file(path)
+            img = tf.image.decode_image(img, channels=3, expand_animations=False)
+            img = tf.image.resize(img, self.img_size)
+            img = tf.cast(img, tf.float32)
+            return img, label
+
+        ds = path_ds.map(_cargar, num_parallel_calls=tf.data.AUTOTUNE)
+        return ds.batch(self.batch_size).cache().prefetch(tf.data.AUTOTUNE)
 
     def _preparar(self, ds, preprocess, entrenar=False):
         ds = ds.map(lambda x, y: (preprocess(tf.cast(x, tf.float32)), y),

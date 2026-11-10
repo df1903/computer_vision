@@ -11,7 +11,7 @@ nombre_exp = "experimento_1"
 # HIPERPARÁMETROS DE ENTRENAMIENTO
 # =========================================================================
 hiperparametros = {
-    "max_epochs": 3,          # Cantidad máxima de épocas permitidas
+    "max_epochs": 10,          # Cantidad máxima de épocas permitidas
     "patience": 5,             # Paciencia del Early Stopping (épocas sin mejora en val_loss)
     "batch_size": 32,          # Tamaño del lote (batch)
     "learning_rate": 1e-3,     # Tasa de aprendizaje (Learning Rate)
@@ -34,10 +34,10 @@ trainer = CNNTrainer(
 # "VGG16", "VGG19", "MobileNet", "ResNet50", "DenseNet121"
 # Si dejas la lista vacía [] o None, entrenará todas las disponibles.
 modelos_a_entrenar = [
-    #"VGG16",
+    # "VGG16",
     # "MobileNet",
-    # "VGG19",
-    "ResNet50",
+    "VGG19",
+    # "ResNet50",
     # "DenseNet121",
 ]
 
