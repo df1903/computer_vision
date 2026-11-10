@@ -26,5 +26,5 @@ Estado: **cerrado** (2026-10-13). Alcance: desde *Fundamentos* hasta **K-Means**
 ## Notas de cierre
 
 - K-Means **no** tiene trabajo propio en `trabajos/`: se vio con diapositivas y notebook (Colab). Si el profesor pide una actividad evaluativa, va como `trabajos/06-*/`.
-- Material posterior a K-Means ya recibido: CNN y arquitecturas reconocidas (`11-cnn.md`). Se trata como **inicio del segundo corte**, no como parte de este.
+- Material posterior a K-Means ya recibido: CNN y arquitecturas reconocidas (`11-cnn.md`) y detección de objetos con YOLO (`12-yolo.md`). Se trata como **inicio del segundo corte**, no como parte de este.
 - Pendiente fuera del repo: ninguna entrega abierta conocida del corte 1.

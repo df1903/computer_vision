@@ -103,4 +103,4 @@ No requiere scikit-learn; entrada `float32` de forma `(N, 3)`.
 
 ## 7. Conexión con el resto del curso
 
-K-Means usa lo visto antes (imagen como arreglo → `reshape`, BGR/RGB, espacios de color) y sirve de puente al segundo corte: pasa de reglas fijas escritas a mano (umbrales, `inRange`) a **aprender estructura de los datos**. El siguiente paso lógico es aprendizaje supervisado con CNN (`11-cnn.md`).
+K-Means usa lo visto antes (imagen como arreglo → `reshape`, BGR/RGB, espacios de color) y sirve de puente al segundo corte: pasa de reglas fijas escritas a mano (umbrales, `inRange`) a **aprender estructura de los datos**. El siguiente paso lógico es aprendizaje supervisado con CNN (`11-cnn.md`) y detección de objetos (`12-yolo.md`).

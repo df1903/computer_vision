@@ -48,7 +48,7 @@ Orden en que aparecen los temas en la presentación:
 
 **Hilo conductor `[CURSO]`:** *entender la imagen como números → cambiar de espacio de color → operar entre imágenes → filtrar/suavizar → detectar bordes → limpiar formas binarias → extraer y clasificar figuras.* Cada tema alimenta el siguiente: el suavizado prepara a Canny; Canny prepara a los contornos; la morfología limpia lo binario; los contornos permiten clasificar formas.
 
-> **Continuación del curso (fuera de esta presentación):** K-Means (cierra el primer corte) en `10-kmeans.md`; CNN y arquitecturas reconocidas (segundo corte) en `11-cnn.md`. Estado del corte en `corte-1.md`. Índice en `README.md`.
+> **Continuación del curso (fuera de esta presentación):** K-Means (cierra el primer corte) en `10-kmeans.md`; CNN y arquitecturas reconocidas (segundo corte) en `11-cnn.md`; detección de objetos (YOLO) en `12-yolo.md`. Estado del corte en `corte-1.md`. Índice en `README.md`.
 
 ---
 

@@ -28,7 +28,7 @@ venv\Scripts\pip install -r requirements.txt
 | 1 | Fundamentos → K-Means | Cerrado |
 | 2 | CNN en adelante | Abierto |
 
-Notas: K-Means vive como material de clase y contexto (`.context/curso/`), sin trabajo propio en `trabajos/`. El trabajo de CNN es `trabajos/06-cnns/`.
+Notas: K-Means vive como material de clase y contexto (`.context/curso/`), sin trabajo propio en `trabajos/`. El trabajo de CNN es `trabajos/06-cnns/`. YOLO (detección de objetos) está como material y contexto (`.context/curso/12-yolo.md`), sin trabajo propio todavía.
 
 Cada trabajo tiene su propio `README.md` con detalle de cómo funciona y cómo correrlo.
 

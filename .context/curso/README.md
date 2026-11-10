@@ -8,6 +8,7 @@ Orden de lectura sugerido al escribir o explicar código de visión artificial:
 | `10-kmeans.md` | K-Means: algoritmo, ejemplo manual, segmentación de imágenes por color. | 1 |
 | `corte-1.md` | Qué cubre el primer corte (cerrado) y qué trabajos lo componen. | 1 |
 | `11-cnn.md` | CNN: capas, convolución/pooling, código Keras, arquitecturas (VGG, ResNet, DenseNet, ConvNeXt). | 2 (inicio) |
+| `12-yolo.md` | Detección de objetos: componentes (backbone, region proposal, ROI pooling), una vs dos etapas, versiones YOLO, proceso (cuadrícula, NMS), arquitectura backbone/neck/head. | 2 |
 
 ## Convenciones
 

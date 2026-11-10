@@ -24,7 +24,7 @@ Estado: primer corte cerrado (Fundamentos → K-Means); segundo corte abierto (C
 | Antes de añadir una dependencia o tecnología | `.context/stack.md` (si no está aquí, no está aprobado: pregunta) |
 | Antes de proponer algo estructural | `.context/constraints.md` (prevalece sobre tus propuestas) |
 | Antes de crear un archivo, nombrar algo o escribir código | `.context/conventions.md` |
-| Al explicar o escribir código del curso / llega material nuevo | `.context/curso/README.md` (índice: `temario.md`, `10-kmeans.md`, `11-cnn.md`, `corte-1.md`) |
+| Al explicar o escribir código del curso / llega material nuevo | `.context/curso/README.md` (índice: `temario.md`, `10-kmeans.md`, `11-cnn.md`, `12-yolo.md`, `corte-1.md`) |
 | Al tomar o consultar decisiones previas | `.context/project/decisions.md` |
 | Problemas ya conocidos (no los redescubras ni arregles sin que se pida) | `.context/state/known-issues.md` |
 

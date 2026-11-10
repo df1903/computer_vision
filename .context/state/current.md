@@ -25,4 +25,4 @@ Segundo corte abierto (CNN en adelante). Trabajo 06 (CNNs) integrado el 2026-10-
 | 1 | Fundamentos → K-Means | **Cerrado** (2026-10-13) |
 | 2 | CNN en adelante | Abierto (trabajo 06) |
 
-Material 2.º corte recibido: CNN y arquitecturas reconocidas (`curso/11-cnn.md`).
+Material 2.º corte recibido: CNN y arquitecturas reconocidas (`curso/11-cnn.md`) y detección de objetos YOLO (`curso/12-yolo.md`, fuente `material-clase/4_Yolo.md`, recibido 2026-11-10). Sin trabajo evaluativo de YOLO aún.
