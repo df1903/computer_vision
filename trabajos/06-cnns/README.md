@@ -132,3 +132,18 @@ Para cada modelo entrenado dentro de `resultados/<experimento>/<modelo>/` se gen
    - `grafica_confusion`
    - `archivo_reporte`
 6. **`comparativa_val_loss.png`**: Gráfica comparativa de curvas de validación cuando se entrena más de un modelo en la misma corrida.
+
+---
+
+## Interfaz para cargar un modelo y predecir
+
+[predictor_gui.py](predictor_gui.py) (Tkinter, sin dependencias nuevas):
+
+```powershell
+venv\Scripts\python.exe trabajos/06-cnns/predictor_gui.py
+```
+
+1. **Panel superior (Modelo):** lista los `.keras` de `resultados/*/*/` y permite *Cargar*. También *Generar modelo*: eliges arquitectura, experimento y épocas; entrena con `CNNTrainer` en un hilo y muestra el log. Al terminar, el modelo nuevo queda seleccionado en la lista.
+2. **Panel inferior (Predicción):** *Elegir imagen y predecir* muestra la imagen, la clase predicha y el top-3 con probabilidades.
+
+La imagen se preprocesa igual que en el entrenamiento (RGB, resize al `input_shape` del modelo, `preprocess_input` de su arquitectura).
