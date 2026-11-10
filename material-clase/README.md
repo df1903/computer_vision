@@ -12,5 +12,6 @@ Material entregado por el profesor (Felipe Buitrago Carmona, Universidad de Cald
 | `4_Kmeans_Imagenes.ipynb` | K-Means sobre píxeles (Colab + scikit-learn) | 1 | `10-kmeans.md` |
 | `2_CNNs.md` | Diapositivas de redes neuronales convolucionales | 2 | `11-cnn.md` |
 | `2_CNNs_Reconocidas.md` | VGG, MobileNet, ResNet, DenseNet, ConvNeXt | 2 | `11-cnn.md` |
+| `4_Yolo.md` | Detección de objetos: R-CNN → YOLO, backbone/neck/head, NMS | 2 | `12-yolo.md` |
 
 Notas: `4_Kmeans_Imagenes.ipynb` usa `google.colab` y `scikit-learn`; ver `.context/state/known-issues.md`. Estos archivos no se editan.
